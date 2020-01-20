@@ -1,0 +1,16 @@
+<h3>Topics</h3>
+<%= link to: Routes.topic_path(@conn, :new), class: "btn btn-primary" do %>
+	<p>add</p>
+<% end %>
+<ul class="collection">
+	<%= for topic <- @topics do %>
+	<li class="collection-item">
+		<%= topic.title %>
+		<span class="float-right">
+			<%= link "Edit", to: Routes.topic_path(@conn, :edit, topic.id), class: "btn btn-primary" %>
+			<span></span>
+			<%= link "Delete", to: Routes.topic_path(@conn, :delete, topic.id), method: :delete, class: "btn btn-primary" %>
+		</span>
+	</li>
+	<% end %>
+</ul>

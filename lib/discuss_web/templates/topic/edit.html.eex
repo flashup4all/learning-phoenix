@@ -1,0 +1,11 @@
+<h3>Edit</h3>
+<%= form_for @changeset, Routes.topic_path(@conn, :update, @topic), fn f -> %>
+  <div class="form-group">
+  	<label>
+	    Name: 
+	</label>
+	  <%= text_input f, :title, placeholder: "Title", class: "form-control" %>
+  </div>
+  <%= error_tag f, :title %>
+  <%= submit "Submit" %>
+<% end %>
